@@ -333,6 +333,7 @@ target_link_libraries(ros_to_uavcan_services
 
 ## Mark executables and/or libraries for installation
 install(TARGETS 
+    uavcan_platform_linux
     uav_to_ros_imu
     uav_to_ros_gps_fix
     uav_to_ros_battery_state
@@ -365,6 +366,10 @@ install(DIRECTORY include/${PROJECT_NAME}/
 #   # myfile2
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  PATTERN ".svn" EXCLUDE
+)
 
 #############
 ## Testing ##
